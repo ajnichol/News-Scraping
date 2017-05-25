@@ -48,8 +48,28 @@ module.exports = function(app){
 					};
 				});			
 			});
-		});
+		});	
 		//when a user lands on our site we'll render our index
 		res.render("index");
 	});
+	//this request will populate our table with the scraped articles
+	app.get("/articles", function(req, res){
+
+		Article.find({}, function(error, doc){
+			if(error){
+				console.log(error);
+			}else{
+				var scrapedArticles = {
+					eachArticle: doc
+				};
+
+				res.render("index", scrapedArticles);
+			};
+		});
+	});
+
+	app.post("/save/:id", function(req, res){
+		var articleId = req.params.id;
+		var articleBody = req.body;
+	})
 };
