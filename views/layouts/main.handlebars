@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--font awesome-->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<!--bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!--viewport-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	#mainNav{
+		background-color: orange;
+	}
+	#navLinks{
+		display: flex;
+		flex: 1;
+		justify-content: flex-end;
+		font-weight: 700;
+		text-align: center;
+		font-family: 'Amaranth', sans-serif;
+		font-size: 18px;
+	}
+	#homeLink{
+		padding-right: 15px;
+	}
+	#eventLink{
+		padding-right: 15px;
+	}
+	#navSpacing{
+		flex: 1;
+	}
+	#navSocial{
+		flex: 1;
+		text-align: center;
+	}
+	#headerContent {
+		max-width: 980px;
+		margin: auto;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		height: 80px;
+	}
+	#navContent {
+		max-width: 980px;
+		margin: auto;
+		display: flex;
+		justify-content: space-around;
+		height: 40px;
+		align-items: center;
+	}
+	.logo{
+		flex: 1;
+		text-align: center;
+	}
+	.headerButtons{
+		flex: 1;
+		text-align: center;
+	}
+	.headerText{
+		flex: 1;
+		text-align: center;
+		font-family: 'Amaranth', sans-serif;
+	}
+	#homeImage{
+		background-image: url('./public/images/ign.jpg');
+		min-height: 400px;
+	    background-attachment: fixed;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    border-bottom: 5px solid orange;
+	}
+	#bannerText{
+		text-align: center;
+		color: #fff;
+		font-family: 'Amaranth', sans-serif;
+		font-size: 60px;
+	}
+	#footerText{
+		font-family: 'Amaranth', sans-serif;
+	}
+	#mainFooter{
+		background-color: #222;
+		margin-top: 50px;
+	}
+	#footerContent{
+		max-width: 980px;
+		margin: auto;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	</style>
+	<title>IGN News</title>
+</head>
+<body>
+	<header>
+		<nav id="mainNav">
+			<div id="navContent">
+
+				<div id="navLinks">
+					<img id="eventLink" alt="IGN Logo" src="./public/images/ign_logo.png">
+					<p id="homeLink"><a href="/" style="color: #fff;">Home</a></p>
+					<p id="createLink"><a href="/articles" style="color: #fff;">Show Articles</a></p>
+				</div>
+
+				<div id="navSpacing">
+				</div>
+			
+				<div id="navSocial">
+					<a href="#" style="color: #fff;"><i class="fa fa-facebook fa-2x"></i></a>
+              		<a href="#" style="color: #fff;"><i class="fa fa-twitter fa-2x"></i></a>
+              		<a href="#" style="color: #fff;"><i class="fa fa-instagram fa-2x"></i></a>
+              		<a href="#" style="color: #fff;"><i class="fa fa-youtube fa-2x"></i></a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	{{{body}}}
+
+	<footer id="mainFooter">
+		<div id="footerContent">
+			<div class="logo">
+				<img id="eventLink" alt="IGN Logo" src="./public/images/ign_logo.png">
+			</div>
+			<div class="headerText">
+				<p style="color: #fff;">Alex Nichols - All Rights Reserved - 2017</p>
+			</div>
+			<div class="headerButtons">
+				<p style="color: #fff;">Connect With Us:</p>
+				<a href="#" style="color: orange;"><i class="fa fa-facebook fa-1x"></i></a>
+	            <a href="#" style="color: orange;"><i class="fa fa-twitter fa-1x"></i></a>
+	            <a href="#" style="color: orange;"><i class="fa fa-instagram fa-1x"></i></a>
+	            <a href="#" style="color: orange;"><i class="fa fa-youtube fa-1x"></i></a>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>
+

@@ -107,7 +107,7 @@ module.exports = function(app){
 	});
 	//route to delete comments on specific articles
 	app.post("/delete/:id", function(req, res){
-		Article.remove({"comment": req.params._id})
+		Article.remove({"_id": req.params.id})
 		.exec(function(error, doc){
 			if(error){
 				console.log(error);
