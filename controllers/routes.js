@@ -67,9 +67,53 @@ module.exports = function(app){
 			};
 		});
 	});
-
-	app.post("/save/:id", function(req, res){
+	//route that populates each article with comments if there are any in our database
+	app.get("/comment/:id", function(req, res){
 		var articleId = req.params.id;
-		var articleBody = req.body;
-	})
+
+		Article.findOne({"_id": articleId}).populate("comment")
+
+		.exec(function(error, doc){
+			if(error){
+				console.log(error)
+			}else{
+				var allComments = {
+					eachComment: doc
+				};
+
+				res.render("index", allComments);
+			};
+		});
+	});
+	//route to save a comment on an article
+	app.post("/comment/:id", function(req, res){
+
+		var newComment = new Comment(req.body);
+
+		newComment.save(function(error, doc){
+			if(error){
+				console.log(error)
+			}else{
+				Article.update({"_id": req.params.id})
+				.exec(function(error, doc){
+					if(error){
+						console.log(error);
+					}else{
+						res.redirect("index");
+					};
+				});
+			};
+		});
+	});
+	//route to delete comments on specific articles
+	app.post("/delete/:id", function(req, res){
+		Article.remove({"comment": req.params._id})
+		.exec(function(error, doc){
+			if(error){
+				console.log(error);
+			}else{
+				res.redirect("index");
+			};
+		});
+	});
 };
